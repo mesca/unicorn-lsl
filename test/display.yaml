@@ -1,0 +1,22 @@
+graphs:
+  - id: Receiver
+    nodes:
+    - id: inlet
+      module: timeflux.nodes.lsl
+      class: Receive
+      params:
+        prop: name
+        value: Unicorn
+        offset_correction: true
+        unit: s
+    - id: display
+      module: timeflux.nodes.debug
+      class: Display
+    edges:
+      - source: inlet
+        target: display
+    rate: 1
+
+
+
+
